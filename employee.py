@@ -41,3 +41,31 @@ class ProductionWorker(Employee):
     
     def get_pay(self):
         return self.__pay 
+    
+class ShiftSupervisor(Employee):
+
+    def __init__(self, name, number, salary, bonus):
+        Employee.__init__(self, name, number)
+
+        self.__salary = salary 
+        self.__bonus = bonus
+
+    def set_salary(self, salary):
+        self.__salary = salary 
+
+    def set_bonus(self, bonus):
+
+        self.__bonus = bonus
+    
+
+
+    def get_salary(self):
+        return self.__salary
+    
+    def get_bonus(self):
+        if self.__bonus == 'y' or self.__bonus == 'Y':
+            return (int(self.__salary) * .05)
+        else:
+            return 'No Bonus Earned'
+        
+    
